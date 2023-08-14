@@ -29,11 +29,11 @@ import Jimoh from '../assets/Jimoh.svg';
 // import JimoDark from '../assets/Jimoh-dark.svg';
 
 const navList: NavItemProps[] = [
-	{ label: 'Home', href: '/' },
+	{ label: 'Home', href: '#home' },
 	{ label: 'About', href: '#about' },
-	{ label: 'Project', href: '/project' },
-	{ label: 'Blog', href: '/blog' },
-	{ label: 'Contact Me', href: '/contact' },
+	{ label: 'Project', href: '#project' },
+	{ label: 'Blog', href: '#blog' },
+	{ label: 'Contact Me', href: '#contact' },
 ];
 
 const NavItem = ({ label, href }: NavItemProps) => {
@@ -63,6 +63,7 @@ const NavIcon = ({ icon, href }: NavIconProps) => {
 				borderRadius={'md'}
 				as={Link}
 				href={href}
+				target='blank'
 			>
 				<Icon as={icon} />
 			</Box>
@@ -91,14 +92,20 @@ const NavList = () => {
 export const NavIconList = ({ isFooter }: { isFooter: boolean }) => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
 	const navIcons: NavIconProps[] = [
-		{ icon: FaLinkedin, href: '/linn' },
-		{ icon: FaTwitter, href: '/lin' },
+		{
+			icon: FaLinkedin,
+			href: 'http://www.linkedin.com/in/abdul-quadri-jimoh-69369714a',
+		},
+		{ icon: FaTwitter, href: 'https://twitter.com/abu4code' },
 
-		{ icon: FaGithub, href: '/li' },
+		{ icon: FaGithub, href: 'https://github.com/Abu-Abdillah1' },
 
-		{ icon: FaMediumM, href: '/linns' },
+		{ icon: FaMediumM, href: 'https://medium.com/@AQ-Jimoh' },
 
-		{ icon: FaStackOverflow, href: '/lsinn' },
+		{
+			icon: FaStackOverflow,
+			href: 'https://stackoverflow.com/users/20951272/abdul-quadri-jimoh',
+		},
 	];
 	return (
 		<>
@@ -187,8 +194,6 @@ export const Navigation = () => {
 				justifyContent={'space-between'}
 				alignItems={'center'}
 				gap={isLessThan1100 ? 0 : 10}
-				zIndex={'popover'}
-				
 			>
 				<Signature isFooter={false} />
 				<NavList />

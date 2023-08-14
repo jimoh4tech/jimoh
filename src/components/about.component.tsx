@@ -112,10 +112,10 @@ const Skills = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	const set1 =
-    'JavaScript, TypeScript, Java, C, Python, HTML, CSS, SCSS, Tailwind CSS';
+    ' JavaScript, TypeScript, Java, C, Python, HTML, CSS, SCSS, Tailwind CSS';
   const set2 =
-    'React JS, Next JS, Node JS, Express JS, Nest JS, MongoDB, PostgreSQL, SQLite, REST API, GraphQL';
-  const set3 = 'Git, Docker, CI/CD Pipeline, Jest, Shell';
+    ' React JS, Next JS, Node JS, Express JS, Nest JS, MongoDB, PostgreSQL, MySQL, SQLite, REST API, GraphQL';
+  const set3 = ' Git, Docker, CI/CD Pipeline, Jest, Shell, AWS';
 
 	return (
 		<>
@@ -129,29 +129,29 @@ const Skills = () => {
 					<Box bg={'#18F24F'} w={isLessThan750 ? '13px' : '15px'} />
 					<Heading fontSize={isLessThan1100 ? 'lg' : '3xl'}>Skills</Heading>
 				</Stack>
-				<Flex justifyContent={'space-between'}>
+				<Flex
+					justifyContent={'space-between'}
+					flexDir={isLessThan750 ? 'column' : 'row'}
+				>
 					<List>
-						
 						{set1.split(',').map((l) => (
-							<ListItem>
+							<ListItem fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
 						))}
 					</List>
 					<List>
-						
 						{set2.split(',').map((l) => (
-							<ListItem>
+							<ListItem fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
 						))}
 					</List>
 					<List>
-						
 						{set3.split(',').map((l) => (
-							<ListItem>
+							<ListItem fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
