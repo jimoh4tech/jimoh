@@ -187,6 +187,8 @@ export const Navigation = () => {
 				justifyContent={'space-between'}
 				alignItems={'center'}
 				gap={isLessThan1100 ? 0 : 10}
+				zIndex={'popover'}
+				
 			>
 				<Signature isFooter={false} />
 				<NavList />

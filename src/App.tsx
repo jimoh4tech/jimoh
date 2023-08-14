@@ -8,23 +8,18 @@ import { About } from './components/about.component';
 function App() {
 	return (
 		<>
-			<Container
-				minW={'100vw'}
-				minH={'100vh'}
-				bg={useColorModeValue('black', 'white')}
-			>
+			<Container minW={'100vw'} bg={useColorModeValue('black', 'white')}>
 				<Container
 					maxW={'1300px'}
 					display={'flex'}
 					flexDir='column'
 					justifyContent={'space-between'}
-					minH={'100vh'}
-					gap={'100px'}
+					gap={'150px'}
 				>
 					<Navigation />
-						<Home />
-						<About />
-					
+					<Home />
+					<About />
+
 					<Footer />
 				</Container>
 			</Container>
