@@ -28,6 +28,14 @@ import { FiMenu } from 'react-icons/fi';
 import Jimoh from '../assets/Jimoh.svg';
 // import JimoDark from '../assets/Jimoh-dark.svg';
 
+const navList: NavItemProps[] = [
+	{ label: 'Home', href: '/' },
+	{ label: 'About', href: '/about' },
+	{ label: 'Project', href: '/project' },
+	{ label: 'Blog', href: '/blog' },
+	{ label: 'Contact Me', href: '/contact' },
+];
+
 const NavItem = ({ label, href }: NavItemProps) => {
 	return (
 		<>
@@ -64,13 +72,6 @@ const NavIcon = ({ icon, href }: NavIconProps) => {
 
 const NavList = () => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
-	const navList: NavItemProps[] = [
-		{ label: 'Home', href: '/' },
-		{ label: 'About', href: '/about' },
-		{ label: 'Project', href: '/project' },
-		{ label: 'Blog', href: '/blog' },
-		{ label: 'Contact Me', href: '/contact' },
-	];
 	return (
 		<>
 			<Flex
@@ -87,7 +88,7 @@ const NavList = () => {
 	);
 };
 
-const NavIconList = () => {
+export const NavIconList = ({ isFooter }: { isFooter: boolean }) => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
 	const navIcons: NavIconProps[] = [
 		{ icon: FaLinkedin, href: '/linn' },
@@ -104,8 +105,9 @@ const NavIconList = () => {
 			<Flex
 				direction={'row'}
 				justifyContent={'space-between'}
-				flex={2}
-				display={isLessThan1000 ? 'none' : 'flex'}
+				flex={isFooter ? 0 : 2}
+				display={!isLessThan1000 || isFooter ? 'flex' : 'none'}
+				gap={2}
 			>
 				{navIcons.map((i) => (
 					<NavIcon key={i.href} {...i} />
@@ -118,13 +120,6 @@ const NavIconList = () => {
 const MobileNav = () => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	const navList: NavItemProps[] = [
-		{ label: 'Home', href: '/' },
-		{ label: 'About', href: '/about' },
-		{ label: 'Project', href: '/project' },
-		{ label: 'Blog', href: '/blog' },
-		{ label: 'Contact Me', href: '/contact' },
-	];
 
 	if (!isLessThan1000) return <></>;
 	return (
@@ -151,6 +146,35 @@ const MobileNav = () => {
 		</>
 	);
 };
+
+export const Signature = ({ isFooter }: { isFooter: boolean }) => {
+	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
+	return (
+		<>
+			<Box
+				color={useColorModeValue('white', 'black')}
+				display={'flex'}
+				flexDir={'column'}
+				flex={isFooter ? 0 : 1}
+				cursor={'pointer'}
+			>
+				<Flex alignItems={'baseline'}>
+					<Box w={isLessThan1000 ? '20' : '30'}>
+						<Image src={Jimoh} />
+					</Box>
+					<Circle bgColor='#18F24F' size={isLessThan1000 ? '7px' : '10px'} />
+				</Flex>
+				<Text
+					fontSize={isLessThan1000 ? 'xs' : 'sm'}
+					letterSpacing={isLessThan1000 ? '1px' : '3px'}
+					whiteSpace={'nowrap'}
+				>
+					ADBUL QUADRI
+				</Text>
+			</Box>
+		</>
+	);
+};
 export const Navigation = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
@@ -164,30 +188,9 @@ export const Navigation = () => {
 				alignItems={'center'}
 				gap={isLessThan1100 ? 0 : 10}
 			>
-				<Box
-					color={useColorModeValue('white', 'black')}
-					display={'flex'}
-					flexDir={'column'}
-					flex={1}
-					cursor={'pointer'}
-				>
-					<Flex alignItems={'baseline'}>
-						<Box w={isLessThan1000 ? '20' : '30'}>
-							<Image src={Jimoh} />
-						</Box>
-						<Circle bgColor='#18F24F' size='10px' />
-					</Flex>
-					<Text
-						fontSize={isLessThan1000 ? 'xs' : 'sm'}
-						letterSpacing={isLessThan1000 ? '1px' : '3px'}
-						whiteSpace={'nowrap'}
-					>
-						ADBUL QUADRI
-					</Text>
-				</Box>
+				<Signature isFooter={false} />
 				<NavList />
-				<NavIconList />
-
+				<NavIconList isFooter={false} />
 				<MobileNav />
 			</Flex>
 		</>
