@@ -36,13 +36,16 @@ const navList: NavItemProps[] = [
 	{ label: 'Contact Me', href: '#contact' },
 ];
 
-const NavItem = ({ label, href }: NavItemProps) => {
+const NavItem = ({ label, href, onClose }: NavItemProps) => {
+	
 	return (
 		<>
 			<Link
 				_hover={{ color: '#18F24F', borderBottom: '1px' }}
 				color={useColorModeValue('white', 'black')}
 				href={href}
+				onClick={onClose}
+				
 			>
 				{label.toUpperCase()}
 			</Link>
@@ -145,7 +148,7 @@ const MobileNav = () => {
 
 					<Stack p={10} gap={7}>
 						{navList.map((l) => (
-							<NavItem key={l.label} {...l} />
+							<NavItem key={l.label} {...l} onClose={onClose}/>
 						))}
 					</Stack>
 				</DrawerContent>
