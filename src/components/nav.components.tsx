@@ -30,7 +30,7 @@ import Jimoh from '../assets/Jimoh.svg';
 
 const navList: NavItemProps[] = [
 	{ label: 'Home', href: '/' },
-	{ label: 'About', href: '/about' },
+	{ label: 'About', href: '#about' },
 	{ label: 'Project', href: '/project' },
 	{ label: 'Blog', href: '/blog' },
 	{ label: 'Contact Me', href: '/contact' },

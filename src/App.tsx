@@ -1,7 +1,9 @@
 import '@fontsource-variable/space-grotesk';
-import { Container, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Container, useColorModeValue } from '@chakra-ui/react';
 import { Navigation } from './components/nav.components';
 import { Footer } from './components/footer.components';
+import { Home } from './components/home.components';
+import { About } from './components/about.component';
 
 function App() {
 	return (
@@ -17,8 +19,12 @@ function App() {
 					flexDir='column'
 					justifyContent={'space-between'}
 					minH={'100vh'}
+					gap={'100px'}
 				>
 					<Navigation />
+						<Home />
+						<About />
+					
 					<Footer />
 				</Container>
 			</Container>
