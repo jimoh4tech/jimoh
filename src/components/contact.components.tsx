@@ -4,6 +4,7 @@ import {
 	Flex,
 	Heading,
 	Input,
+	Link,
 	Stack,
 	Text,
 	Textarea,
@@ -11,9 +12,12 @@ import {
 	useMediaQuery,
 } from '@chakra-ui/react';
 
+
 export const Contact = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
-	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
+  const [isLessThan750] = useMediaQuery('(max-width: 750px)');
+  const [name, setName] = useState
+  
 	return (
 		<>
 			<Flex gap={isLessThan1100 ? 5 : 16} id='contact'>
@@ -31,8 +35,17 @@ export const Contact = () => {
 								Contact
 							</Heading>
 						</Stack>
-						<Flex justifyContent={'space-between'} gap={10} flexDir={isLessThan750 ? 'column' : 'row'}>
-							<Stack bg={'#1E1E1E'} p={isLessThan750 ? '4' :'10'} flex={1} gap={5}>
+						<Flex
+							justifyContent={'space-between'}
+							gap={10}
+							flexDir={isLessThan750 ? 'column' : 'row'}
+						>
+							<Stack
+								bg={useColorModeValue('#1E1E1E', 'gray.50')}
+								p={isLessThan750 ? '4' : '10'}
+								flex={1}
+								gap={5}
+							>
 								<Text
 									fontWeight={'bold'}
 									fontSize={isLessThan1100 ? 'md' : 'lg'}
@@ -49,10 +62,41 @@ export const Contact = () => {
 								</Text>
 							</Stack>
 							<Stack flex={1} gap={5}>
-								<Input placeholder='Name' />
-								<Input type='email' placeholder='Email' />
-								<Textarea placeholder='Message' rows={7}/>
-								<Button bg={'#18F24F'}>Send Message</Button>
+								<Input
+									borderColor={useColorModeValue('white', 'black')}
+									placeholder='Name'
+									_placeholder={{
+										color: useColorModeValue('#3f444e', '#cdd2da'),
+									}}
+								/>
+								<Input
+									borderColor={useColorModeValue('white', 'black')}
+									_placeholder={{
+										color: useColorModeValue('#3f444e', '#cdd2da'),
+									}}
+									type='email'
+									placeholder='Email'
+								/>
+								<Textarea
+									borderColor={useColorModeValue('white', 'black')}
+									_placeholder={{
+										color: useColorModeValue('#3f444e', '#cdd2da'),
+									}}
+									placeholder='Message'
+									rows={7}
+								/>
+								<Button
+									bg={'#18F24F'}
+									_hover={{
+										bg: useColorModeValue('white', 'black'),
+										color: useColorModeValue('black', 'white'),
+									}}
+                  as={Link}
+                  href={`mailto:olamide14044@gmail.com?subject=Testing the world&body=you want to know`}
+                  borderBottom={'none'}
+								>
+									Send Message
+								</Button>
 							</Stack>
 						</Flex>
 					</Flex>

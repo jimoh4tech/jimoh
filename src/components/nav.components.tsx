@@ -12,6 +12,7 @@ import {
 	Link,
 	Stack,
 	Text,
+	useColorMode,
 	useColorModeValue,
 	useDisclosure,
 	useMediaQuery,
@@ -25,8 +26,9 @@ import {
 	FaStackOverflow,
 } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
+import { BsSun, BsMoonStarsFill } from 'react-icons/bs';
 import Jimoh from '../assets/Jimoh.svg';
-// import JimoDark from '../assets/Jimoh-dark.svg';
+import JimoDark from '../assets/Jimoh-dark.svg';
 
 const navList: NavItemProps[] = [
 	{ label: 'Home', href: '#home' },
@@ -37,7 +39,6 @@ const navList: NavItemProps[] = [
 ];
 
 const NavItem = ({ label, href, onClose }: NavItemProps) => {
-	
 	return (
 		<>
 			<Link
@@ -45,7 +46,6 @@ const NavItem = ({ label, href, onClose }: NavItemProps) => {
 				color={useColorModeValue('white', 'black')}
 				href={href}
 				onClick={onClose}
-				
 			>
 				{label.toUpperCase()}
 			</Link>
@@ -69,6 +69,27 @@ const NavIcon = ({ icon, href }: NavIconProps) => {
 				target='blank'
 			>
 				<Icon as={icon} />
+			</Box>
+		</>
+	);
+};
+
+export const ToggleModeIcon = () => {
+	const { colorMode, toggleColorMode } = useColorMode();
+	return (
+		<>
+			<Box
+				bg={'#18F24F'}
+				w={'9'}
+				display={'flex'}
+				h={'9'}
+				justifyContent={'center'}
+				alignItems={'center'}
+				borderRadius={'md'}
+				onClick={toggleColorMode}
+				key={'toggle'}
+			>
+				<Icon as={colorMode === 'light' ? BsSun : BsMoonStarsFill} />
 			</Box>
 		</>
 	);
@@ -122,33 +143,32 @@ export const NavIconList = ({ isFooter }: { isFooter: boolean }) => {
 				{navIcons.map((i) => (
 					<NavIcon key={i.href} {...i} />
 				))}
+				<ToggleModeIcon />
 			</Flex>
 		</>
 	);
 };
 
-const MobileNav = () => {
-	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
+const MobileDrawer = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-
-	if (!isLessThan1000) return <></>;
 	return (
 		<>
 			<IconButton
 				onClick={onOpen}
 				variant='outline'
 				aria-label='open menu'
-				icon={<FiMenu color='#FFFFFF' />}
+				// eslint-disable-next-line react-hooks/rules-of-hooks
+				icon={<FiMenu color={useColorModeValue('white', 'black')} />}
 			/>
 
 			<Drawer isOpen={isOpen} placement='right' onClose={onClose} size={'sm'}>
 				<DrawerOverlay />
-				<DrawerContent bg={'black'}>
-					<DrawerCloseButton color={'white'} />
+				<DrawerContent bg={useColorModeValue('black', 'white')}>
+					<DrawerCloseButton color={useColorModeValue('white', 'black')} />
 
 					<Stack p={10} gap={7}>
 						{navList.map((l) => (
-							<NavItem key={l.label} {...l} onClose={onClose}/>
+							<NavItem key={l.label} {...l} onClose={onClose} />
 						))}
 					</Stack>
 				</DrawerContent>
@@ -157,8 +177,16 @@ const MobileNav = () => {
 	);
 };
 
+const MobileNav = () => {
+	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
+
+	if (!isLessThan1000) return <> </>;
+	return <MobileDrawer />;
+};
+
 export const Signature = ({ isFooter }: { isFooter: boolean }) => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
+	const { colorMode } = useColorMode();
 	return (
 		<>
 			<Box
@@ -170,7 +198,7 @@ export const Signature = ({ isFooter }: { isFooter: boolean }) => {
 			>
 				<Flex alignItems={'baseline'}>
 					<Box w={isLessThan1000 ? '20' : '30'}>
-						<Image src={Jimoh} />
+						<Image src={colorMode === 'light' ? Jimoh : JimoDark} />
 					</Box>
 					<Circle bgColor='#18F24F' size={isLessThan1000 ? '7px' : '10px'} />
 				</Flex>
@@ -191,7 +219,7 @@ export const Navigation = () => {
 	return (
 		<>
 			<Flex
-				bg={'#1E1E1E'}
+				bg={useColorModeValue('#1E1E1E', 'gray.50')}
 				py={'5'}
 				px={isLessThan1000 ? '5' : '16'}
 				justifyContent={'space-between'}

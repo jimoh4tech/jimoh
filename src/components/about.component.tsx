@@ -99,7 +99,7 @@ const Experince = ({
 					</Text>
 					<UnorderedList fontSize={'sm'}>
 						{descriptions.map((d) => (
-							<ListItem>{d}</ListItem>
+							<ListItem key={d}>{d}</ListItem>
 						))}
 					</UnorderedList>
 				</Stack>
@@ -124,6 +124,7 @@ const Skills = () => {
 				justifyContent={'space-between'}
 				color={useColorModeValue('white', 'black')}
 				gap={8}
+				key={'skills'}
 			>
 				<Stack direction={'row'} gap={5}>
 					<Box bg={'#18F24F'} w={isLessThan750 ? '13px' : '15px'} />
@@ -132,10 +133,11 @@ const Skills = () => {
 				<Flex
 					justifyContent={'space-between'}
 					flexDir={isLessThan750 ? 'column' : 'row'}
+					gap={3}
 				>
 					<List>
 						{set1.split(',').map((l) => (
-							<ListItem fontSize={'sm'}>
+							<ListItem key={l} fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
@@ -143,7 +145,7 @@ const Skills = () => {
 					</List>
 					<List>
 						{set2.split(',').map((l) => (
-							<ListItem fontSize={'sm'}>
+							<ListItem key={l} fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
@@ -151,7 +153,7 @@ const Skills = () => {
 					</List>
 					<List>
 						{set3.split(',').map((l) => (
-							<ListItem fontSize={'sm'}>
+							<ListItem key={l} fontSize={'sm'}>
 								<ListIcon as={BiCodeAlt} color={'#18F24F'} />
 								{l}
 							</ListItem>
@@ -175,7 +177,8 @@ export const About = () => {
 						flexDir={'column'}
 						justifyContent={'space-between'}
 						color={useColorModeValue('white', 'black')}
-						gap={8}
+            gap={8}
+            key={'about'}
 					>
 						<Stack direction={'row'} gap={5}>
 							<Box bg={'#18F24F'} w={isLessThan750 ? '13px' : '15px'} />
@@ -196,7 +199,7 @@ export const About = () => {
 						</Text>
 					</Flex>
 					{experinceList.map((ex) => (
-						<Experince key={ex.label} {...ex} />
+						<Experince key={ex.title} {...ex} />
 					))}
 					<Skills />
 				</Stack>

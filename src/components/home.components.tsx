@@ -16,7 +16,7 @@ export const Home = () => {
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} id='home'   >
+			<Flex gap={isLessThan1100 ? 5 : 16} id='home'>
 				<Box bg={'#18F24F'} w={isLessThan750 ? '3px' : '7px'} />
 				<Flex
 					flexDir={'column'}
@@ -51,14 +51,22 @@ export const Home = () => {
 						development. I look forward to connecting with you and exploring the
 						possibilities together. Happy exploring! 💻🌟
 					</Text>
-					<Button bg={'#18F24F'} width={'170px'} bgSize={'xs'}>
+					<Button
+						bg={'#18F24F'}
+						_hover={{
+							bg: useColorModeValue('white', 'black'),
+							color: useColorModeValue('black', 'white'),
+						}}
+						width={'170px'}
+						bgSize={'xs'}
+					>
 						DOWNLOAD CV
 					</Button>
 				</Flex>
 				<Box
 					flex={isLessThan1100 ? 1 : 2}
-          display={isLessThan750 ? 'none' : 'flex'}
-          maxW={'370px'}
+					display={isLessThan750 ? 'none' : 'flex'}
+					maxW={'370px'}
 				>
 					<Image src={Icon} alt='icon' />
 				</Box>
