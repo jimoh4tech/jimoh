@@ -2,22 +2,50 @@ import {
 	Box,
 	Button,
 	Flex,
+	FormControl,
 	Heading,
 	Input,
-	Link,
 	Stack,
 	Text,
 	Textarea,
 	useColorModeValue,
 	useMediaQuery,
+	useToast,
 } from '@chakra-ui/react';
-
+import { useFormik } from 'formik';
+import { send } from '@emailjs/browser';
 
 export const Contact = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
-  const [isLessThan750] = useMediaQuery('(max-width: 750px)');
-  const [name, setName] = useState
-  
+	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
+	const toast = useToast();
+
+	const formik = useFormik({
+		initialValues: {
+			name: '',
+			email: '',
+			message: '',
+		},
+		async onSubmit(values) {
+			console.log(values);
+      const res =await send(
+				process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
+				'contact_me',
+				values,
+				process.env.REACT_APP_EMAILJS_API_KEY || ''
+      );
+      console.log(res);
+			toast({
+				title: 'Message Sent',
+				description: "Thanks for reaching out to me, I would get back to you shortly.",
+				status: 'success',
+				duration: 9000,
+				position: 'top-right',
+        isClosable: true,
+			});
+		},
+	});
+
 	return (
 		<>
 			<Flex gap={isLessThan1100 ? 5 : 16} id='contact'>
@@ -61,42 +89,60 @@ export const Contact = () => {
 									Connecting now will help us shape technology's future.
 								</Text>
 							</Stack>
-							<Stack flex={1} gap={5}>
-								<Input
-									borderColor={useColorModeValue('white', 'black')}
-									placeholder='Name'
-									_placeholder={{
-										color: useColorModeValue('#3f444e', '#cdd2da'),
-									}}
-								/>
-								<Input
-									borderColor={useColorModeValue('white', 'black')}
-									_placeholder={{
-										color: useColorModeValue('#3f444e', '#cdd2da'),
-									}}
-									type='email'
-									placeholder='Email'
-								/>
-								<Textarea
-									borderColor={useColorModeValue('white', 'black')}
-									_placeholder={{
-										color: useColorModeValue('#3f444e', '#cdd2da'),
-									}}
-									placeholder='Message'
-									rows={7}
-								/>
-								<Button
-									bg={'#18F24F'}
-									_hover={{
-										bg: useColorModeValue('white', 'black'),
-										color: useColorModeValue('black', 'white'),
-									}}
-                  as={Link}
-                  href={`mailto:olamide14044@gmail.com?subject=Testing the world&body=you want to know`}
-                  borderBottom={'none'}
-								>
-									Send Message
-								</Button>
+							<Stack flex={1}>
+								<form onSubmit={formik.handleSubmit}>
+									<Stack gap={5}>
+										<FormControl>
+											<Input
+												borderColor={useColorModeValue('white', 'black')}
+												placeholder='Name'
+												_placeholder={{
+													color: useColorModeValue('#3f444e', '#cdd2da'),
+												}}
+												name='name'
+												value={formik.values.name}
+												onChange={formik.handleChange}
+											/>
+										</FormControl>
+										<FormControl>
+											<Input
+												borderColor={useColorModeValue('white', 'black')}
+												_placeholder={{
+													color: useColorModeValue('#3f444e', '#cdd2da'),
+												}}
+												type='email'
+												name='email'
+												placeholder='Email'
+												value={formik.values.email}
+												onChange={formik.handleChange}
+											/>
+										</FormControl>
+										<FormControl>
+											<Textarea
+												borderColor={useColorModeValue('white', 'black')}
+												_placeholder={{
+													color: useColorModeValue('#3f444e', '#cdd2da'),
+												}}
+												placeholder='Message'
+												rows={7}
+												name='message'
+												value={formik.values.message}
+												onChange={formik.handleChange}
+											/>
+										</FormControl>
+										<Button
+											bg={'#18F24F'}
+											_hover={{
+												bg: useColorModeValue('white', 'black'),
+												color: useColorModeValue('black', 'white'),
+											}}
+                      type='submit'
+                      isLoading={formik.isSubmitting}
+										>
+											Send Message
+										</Button>
+									</Stack>
+								</form>
 							</Stack>
 						</Flex>
 					</Flex>
