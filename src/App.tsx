@@ -7,6 +7,7 @@ import { About } from './components/about.component';
 import { Contact } from './components/contact.components';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Projects } from './components/projects.components';
+import { Blogs } from './components/blogs.components';
 
 function App() {
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
@@ -27,6 +28,7 @@ function App() {
 						<Route path='/about' element={<About />} />
 						<Route path='/contact' element={<Contact />} />
 						<Route path='/projects' element={<Projects />} />
+						<Route path='/blogs' element={<Blogs />} />
 						<Route path='*' element={<Navigate to='/' />} />
 					</Routes>
 
