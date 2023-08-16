@@ -27,15 +27,11 @@ export const Contact = () => {
 			message: '',
 		},
 		async onSubmit(values) {
+			const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+			const APIkey = import.meta.env.VITE_EMAILJS_API_KEY || '';
 			try {
 				console.log(values);
-				const res = await send(
-					process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
-					'contact_me',
-					values,
-					process.env.REACT_APP_EMAILJS_API_KEY || ''
-				);
-				console.log(res);
+				await send(serviceID, 'contact_me', values, APIkey);
 				toast({
 					title: 'Message Sent',
 					description:
@@ -58,13 +54,11 @@ export const Contact = () => {
 				});
 			}
 		},
-			
-			
 	});
 
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} >
+			<Flex gap={isLessThan1100 ? 5 : 16}>
 				<Box bg={'#18F24F'} w={'30px'} />
 				<Stack gap={16}>
 					<Flex
@@ -152,8 +146,8 @@ export const Contact = () => {
 												bg: useColorModeValue('white', 'black'),
 												color: useColorModeValue('black', 'white'),
 											}}
-                      type='submit'
-                      isLoading={formik.isSubmitting}
+											type='submit'
+											isLoading={formik.isSubmitting}
 										>
 											Send Message
 										</Button>
