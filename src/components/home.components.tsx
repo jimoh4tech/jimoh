@@ -6,17 +6,19 @@ import {
 	Image,
 	Text,
 	useColorModeValue,
-	useMediaQuery,
+  useMediaQuery,
+  Link
 } from '@chakra-ui/react';
 import Icon from '../assets/icon.svg';
 import Typewriter from 'typewriter-effect';
+import CV from "../assets/JimohAbdulQuadri.pdf";
 
 export const Home = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} >
+			<Flex gap={isLessThan1100 ? 5 : 16}>
 				<Box bg={'#18F24F'} w={isLessThan750 ? '3px' : '7px'} />
 				<Flex
 					flexDir={'column'}
@@ -53,12 +55,16 @@ export const Home = () => {
 					</Text>
 					<Button
 						bg={'#18F24F'}
-						_hover={{
-							bg: useColorModeValue('white', 'black'),
-							color: useColorModeValue('black', 'white'),
-						}}
 						width={'170px'}
 						bgSize={'xs'}
+						as={Link}
+						href={CV}
+						target='_blank'
+						_hover={{
+							bg: useColorModeValue('white', 'black'),
+              color: useColorModeValue('black', 'white'),
+              textDecoration: 'none'
+						}}
 					>
 						DOWNLOAD CV
 					</Button>

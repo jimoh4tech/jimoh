@@ -34,8 +34,8 @@ import { useNavigate } from 'react-router-dom';
 const navList: NavItemProps[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'About', href: '/about' },
-	{ label: 'Project', href: '/project' },
-	{ label: 'Blog', href: '/blog' },
+	{ label: 'Projects', href: '/projects' },
+	{ label: 'Blogs', href: '/blogs' },
 	{ label: 'Contact Me', href: '/contact' },
 ];
 
@@ -66,7 +66,7 @@ const NavIcon = ({ icon, href }: NavIconProps) => {
 				borderRadius={'md'}
 				as={Link}
 				href={href}
-				target='blank'
+				target='_blank'
 			>
 				<Icon as={icon} />
 			</Box>
