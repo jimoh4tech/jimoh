@@ -73,13 +73,12 @@ const NavIcon = ({ icon, href }: NavIconProps) => {
 		</>
 	);
 };
-
-export const ToggleModeIcon = () => {
+const ToggleModeIcon = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	return (
 		<>
 			<Box
-				bg={'#18F24F'}
+				bg={useColorModeValue('white', 'black')}
 				w={'9'}
 				display={'flex'}
 				h={'9'}
@@ -87,9 +86,13 @@ export const ToggleModeIcon = () => {
 				alignItems={'center'}
 				borderRadius={'md'}
 				onClick={toggleColorMode}
+				cursor={'pointer'}
 				key={'toggle'}
 			>
-				<Icon as={colorMode === 'light' ? BsSun : BsMoonStarsFill} />
+				<Icon
+					color={useColorModeValue('black', 'white')}
+					as={colorMode === 'light' ? BsSun : BsMoonStarsFill}
+				/>
 			</Box>
 		</>
 	);
@@ -143,7 +146,7 @@ export const NavIconList = ({ isFooter }: { isFooter: boolean }) => {
 				{navIcons.map((i) => (
 					<NavIcon key={i.href} {...i} />
 				))}
-				<ToggleModeIcon />
+				
 			</Flex>
 		</>
 	);
@@ -233,7 +236,10 @@ export const Navigation = () => {
 			>
 				<Signature isFooter={false} />
 				<NavList />
-				<NavIconList isFooter={false} />
+				<Flex gap={5} mr={3}>
+					<NavIconList isFooter={false} />
+					<ToggleModeIcon />
+				</Flex>
 				<MobileNav />
 			</Flex>
 		</>

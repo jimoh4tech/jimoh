@@ -48,7 +48,7 @@ export const Contact = () => {
 			} catch (error) {
 				console.log(error);
 				toast({
-					title: 'Message Sent',
+					title: 'Message Failed',
 					description:
 						'Unable to contact via webspace? Kindly mail to olamide14044@gmail.com',
 					status: 'error',
