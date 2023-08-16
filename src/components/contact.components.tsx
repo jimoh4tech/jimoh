@@ -14,11 +14,13 @@ import {
 } from '@chakra-ui/react';
 import { useFormik } from 'formik';
 import { send } from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 
 export const Contact = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	const toast = useToast();
+	const navigate = useNavigate();
 
 	const formik = useFormik({
 		initialValues: {
@@ -41,6 +43,8 @@ export const Contact = () => {
 					position: 'top-right',
 					isClosable: true,
 				});
+				navigate('/');
+				
 			} catch (error) {
 				console.log(error);
 				toast({
