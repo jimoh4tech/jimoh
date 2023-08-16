@@ -16,7 +16,7 @@ export const Home = () => {
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} id='home'>
+			<Flex gap={isLessThan1100 ? 5 : 16} >
 				<Box bg={'#18F24F'} w={isLessThan750 ? '3px' : '7px'} />
 				<Flex
 					flexDir={'column'}

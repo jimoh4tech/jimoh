@@ -48,7 +48,7 @@ export const Contact = () => {
 
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} id='contact'>
+			<Flex gap={isLessThan1100 ? 5 : 16} >
 				<Box bg={'#18F24F'} w={'30px'} />
 				<Stack gap={16}>
 					<Flex

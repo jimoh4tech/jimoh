@@ -29,23 +29,23 @@ import { FiMenu } from 'react-icons/fi';
 import { BsSun, BsMoonStarsFill } from 'react-icons/bs';
 import Jimoh from '../assets/Jimoh.svg';
 import JimoDark from '../assets/Jimoh-dark.svg';
+import { useNavigate } from 'react-router-dom';
 
 const navList: NavItemProps[] = [
-	{ label: 'Home', href: '#home' },
-	{ label: 'About', href: '#about' },
-	{ label: 'Project', href: '#project' },
-	{ label: 'Blog', href: '#blog' },
-	{ label: 'Contact Me', href: '#contact' },
+	{ label: 'Home', href: '/' },
+	{ label: 'About', href: '/about' },
+	{ label: 'Project', href: '/project' },
+	{ label: 'Blog', href: '/blog' },
+	{ label: 'Contact Me', href: '/contact' },
 ];
 
-const NavItem = ({ label, href, onClose }: NavItemProps) => {
+const NavItem = ({ label, href }: NavItemProps) => {
 	return (
 		<>
 			<Link
 				_hover={{ color: '#18F24F', borderBottom: '1px' }}
 				color={useColorModeValue('white', 'black')}
 				href={href}
-				onClick={onClose}
 			>
 				{label.toUpperCase()}
 			</Link>
@@ -156,6 +156,8 @@ const MobileDrawer = () => {
 			<IconButton
 				onClick={onOpen}
 				variant='outline'
+				
+				borderColor={useColorModeValue('white', 'black')}
 				aria-label='open menu'
 				// eslint-disable-next-line react-hooks/rules-of-hooks
 				icon={<FiMenu color={useColorModeValue('white', 'black')} />}
@@ -168,7 +170,7 @@ const MobileDrawer = () => {
 
 					<Stack p={10} gap={7}>
 						{navList.map((l) => (
-							<NavItem key={l.label} {...l} onClose={onClose} />
+							<NavItem key={l.label} {...l} />
 						))}
 					</Stack>
 				</DrawerContent>
@@ -186,6 +188,7 @@ const MobileNav = () => {
 
 export const Signature = ({ isFooter }: { isFooter: boolean }) => {
 	const [isLessThan1000] = useMediaQuery('(max-width: 1000px)');
+	const navigate = useNavigate();
 	const { colorMode } = useColorMode();
 	return (
 		<>
@@ -195,6 +198,8 @@ export const Signature = ({ isFooter }: { isFooter: boolean }) => {
 				flexDir={'column'}
 				flex={isFooter ? 0 : 1}
 				cursor={'pointer'}
+				onClick={() => navigate('/')}
+				
 			>
 				<Flex alignItems={'baseline'}>
 					<Box w={isLessThan1000 ? '20' : '30'}>

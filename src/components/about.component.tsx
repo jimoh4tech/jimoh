@@ -124,7 +124,6 @@ const Skills = () => {
 				justifyContent={'space-between'}
 				color={useColorModeValue('white', 'black')}
 				gap={8}
-				key={'skills'}
 			>
 				<Stack direction={'row'} gap={5}>
 					<Box bg={'#18F24F'} w={isLessThan750 ? '13px' : '15px'} />
@@ -170,7 +169,7 @@ export const About = () => {
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
 	return (
 		<>
-			<Flex gap={isLessThan1100 ? 5 : 16} id='about'>
+			<Flex gap={isLessThan1100 ? 5 : 16} >
 				<Box bg={'#18F24F'} w={'30px'} />
 				<Stack gap={16}>
 					<Flex
@@ -178,7 +177,6 @@ export const About = () => {
 						justifyContent={'space-between'}
 						color={useColorModeValue('white', 'black')}
             gap={8}
-            key={'about'}
 					>
 						<Stack direction={'row'} gap={5}>
 							<Box bg={'#18F24F'} w={isLessThan750 ? '13px' : '15px'} />
