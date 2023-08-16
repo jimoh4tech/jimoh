@@ -27,23 +27,39 @@ export const Contact = () => {
 			message: '',
 		},
 		async onSubmit(values) {
-			console.log(values);
-      const res =await send(
-				process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
-				'contact_me',
-				values,
-				process.env.REACT_APP_EMAILJS_API_KEY || ''
-      );
-      console.log(res);
-			toast({
-				title: 'Message Sent',
-				description: "Thanks for reaching out to me, I would get back to you shortly.",
-				status: 'success',
-				duration: 9000,
-				position: 'top-right',
-        isClosable: true,
-			});
+			try {
+				console.log(values);
+				const res = await send(
+					process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
+					'contact_me',
+					values,
+					process.env.REACT_APP_EMAILJS_API_KEY || ''
+				);
+				console.log(res);
+				toast({
+					title: 'Message Sent',
+					description:
+						'Thanks for reaching out to me, I would get back to you shortly.',
+					status: 'success',
+					duration: 9000,
+					position: 'top-right',
+					isClosable: true,
+				});
+			} catch (error) {
+				console.log(error);
+				toast({
+					title: 'Message Sent',
+					description:
+						'Unable to contact via webspace? Kindly mail to olamide14044@gmail.com',
+					status: 'error',
+					duration: 9000,
+					position: 'top-right',
+					isClosable: true,
+				});
+			}
 		},
+			
+			
 	});
 
 	return (

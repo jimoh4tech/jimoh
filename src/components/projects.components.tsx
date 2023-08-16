@@ -17,26 +17,6 @@ import Slider from 'react-slick';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { ProjectCardProps } from '../interfaces/project.interface';
-import Pyyr1 from '../assets/pyyr1.png';
-import Pyyr2 from '../assets/pyyr2.png';
-import Pyyr3 from '../assets/pyyr3.png';
-import Pyyr4 from '../assets/pyyr4.png';
-import Pyyr5 from '../assets/pyyr5.png';
-import Pyyr6 from '../assets/pyyr6.png';
-import Sound1 from '../assets/sound1.png';
-import Sound2 from '../assets/sound2.png';
-import Sound3 from '../assets/sound3.png';
-import Sound4 from '../assets/sound4.png';
-import Ile1 from '../assets/ile1.png';
-import Ile2 from '../assets/ile2.png';
-import Ile3 from '../assets/ile3.png';
-import Ile4 from '../assets/ile4.png';
-import Watch1 from '../assets/w1.png';
-import Watch2 from '../assets/w2.png';
-import Watch3 from '../assets/w3.png';
-import Watch4 from '../assets/w4.png';
-import Watch5 from '../assets/w5.png';
-import Super1 from '../assets/s1.png';
 
 // Settings for the slider
 const settings = {
@@ -57,14 +37,26 @@ const projectList: ProjectCardProps[] = [
 		description:
 			'A fintech admin portal that manages all users and transations on the platform to fooster informed decision making, with the use of graphs, charts and among others.',
 		links: [{ label: 'Live', href: 'https://pyyr.vercel.app/' }],
-		images: [Pyyr1, Pyyr2, Pyyr3, Pyyr4, Pyyr5, Pyyr6],
+		images: [
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208019/test/pyyr1_xhn0gu.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207957/test/pyyr2_slhixg.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207960/test/pyyr3_jxkao0.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207984/test/pyyr4_anmdsj.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207963/test/pyyr5_uwgnkq.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207979/test/pyyr6_odz1u9.png',
+		],
 	},
 	{
 		title: 'Soundmac Music Distribution',
 		description:
 			'Music distribution platforms for all class of artists across the globe.',
 		links: [{ label: 'Live', href: 'https://www.soundmac.co/' }],
-		images: [Sound1, Sound2, Sound3, Sound4],
+		images: [
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207996/test/sound1_c7fmfw.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208007/test/sound2_lful2c.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208042/test/sound3_euzzrj.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208027/test/sound4_sljfto.png',
+		],
 	},
 
 	{
@@ -78,7 +70,12 @@ const projectList: ProjectCardProps[] = [
 				href: 'https://github.com/Abu-Abdillah1/ileri-frontend',
 			},
 		],
-		images: [Ile1, Ile2, Ile3, Ile4],
+		images: [
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208029/test/ile1_fthnne.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207950/test/ile2_jthuy4.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207946/test/ile3_zjxtue.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207951/test/ile4_yyufbd.png',
+		],
 	},
 	{
 		title: 'Watch Ecommerce',
@@ -88,7 +85,13 @@ const projectList: ProjectCardProps[] = [
 			{ label: 'Live', href: 'https://abu-abdillah1.github.io/Watch/' },
 			{ label: 'Code', href: 'https://github.com/Abu-Abdillah1/Watch' },
 		],
-		images: [Watch1, Watch2, Watch3, Watch5, Watch4],
+		images: [
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207954/test/w1_r3azrb.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207941/test/w2_mzzlqx.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207938/test/w3_ylhpxb.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207939/test/w5_pyqmvv.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207933/test/w4_pyqo2n.png',
+		],
 	},
 	{
 		title: 'Super Exchange',
@@ -104,7 +107,10 @@ const projectList: ProjectCardProps[] = [
 				href: 'https://github.com/Abu-Abdillah1/super-exchange',
 			},
 		],
-		images: [Super1],
+		images: [
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208019/test/s1_n7z9cq.png',
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208019/test/s1_n7z9cq.png',
+		],
 	},
 ];
 
@@ -161,7 +167,12 @@ export const ProjectCarousel = ({ images }: { images: string[] }) => {
 			{/* Slider */}
 			<Slider {...settings} ref={(slider) => setSlider(slider)}>
 				{images.map((url, index) => (
-					<Image src={url} key={index} borderRadius={'lg'} />
+					<Image
+						src={url}
+						key={index}
+						borderRadius={'lg'}
+						fallbackSrc='https://via.placeholder.com/300'
+					/>
 				))}
 			</Slider>
 		</Box>

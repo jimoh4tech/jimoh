@@ -15,20 +15,21 @@ import {
 
 import { BlogCardProps } from '../interfaces/blog.interface';
 import { FiArrowRight } from 'react-icons/fi';
-import Blog1 from '../assets/b1.png';
-import Blog2 from '../assets/b2.png';
+
 
 const projectList: BlogCardProps[] = [
 	{
 		description:
 			'What happens when you type https://www.google.com in your browser and press Enter.',
 		href: 'https://medium.com/@AQ-Jimoh/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter-d625316e6443',
-		image: Blog1,
+		image:
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207946/test/b1_ks2zse.png',
 	},
 	{
 		description: 'Two Largest Number problem',
 		href: 'https://medium.com/@AQ-Jimoh/two-largest-number-729ee30718ab',
-		image: Blog2,
+		image:
+			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207941/test/b2_vwtbtm.png',
 	},
 ];
 
@@ -42,7 +43,7 @@ const BlogCard = ({ description, image, href }: BlogCardProps) => {
 			>
 				<CardBody>
 					<Flex justifyContent={'center'}>
-						<Image src={image} />
+						<Image src={image} fallbackSrc='https://via.placeholder.com/300' />
 					</Flex>
 
 					<Stack mt='6' spacing='3'>
