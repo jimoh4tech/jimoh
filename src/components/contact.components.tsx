@@ -98,7 +98,7 @@ export const Contact = () => {
 									Reach out without holding back. I'm willing to help in any way
 									I can and am always open to having thoughtful conversations.
 									Alternatively, you can follow me on LinkedIn, Twitter, and
-									YouTube, my social media channels. As we set out on this
+									Medium, my social media channels. As we set out on this
 									technological journey together, I eagerly await your feedback.
 									Connecting now will help us shape technology's future.
 								</Text>
