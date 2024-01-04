@@ -6,16 +6,17 @@ import {
 	Image,
 	Text,
 	useColorModeValue,
-  useMediaQuery,
-  Link
+	useMediaQuery,
+	Link,
 } from '@chakra-ui/react';
 import Icon from '../assets/icon.svg';
 import Typewriter from 'typewriter-effect';
-import CV from "../assets/jimoh.pdf";
+import CV from '../assets/jimoh.pdf';
 
 export const Home = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
+	console.log(`Someone visited at ${Date().toString()}`);
 	return (
 		<>
 			<Flex gap={isLessThan1100 ? 5 : 16}>
@@ -62,8 +63,8 @@ export const Home = () => {
 						target='_blank'
 						_hover={{
 							bg: useColorModeValue('white', 'black'),
-              color: useColorModeValue('black', 'white'),
-              textDecoration: 'none'
+							color: useColorModeValue('black', 'white'),
+							textDecoration: 'none',
 						}}
 					>
 						DOWNLOAD CV
