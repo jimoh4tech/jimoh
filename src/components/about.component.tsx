@@ -30,11 +30,21 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
+		duration: 'October 2023 - Present (Contract)',
+		title: 'Backend Engineer, Lassod Consulting Limited',
+		descriptions: [
+			'Collaborated with diverse team of developers across the globe to contribute key features to the existing Oyoyo Event App project',
+			'Integrated Elastic Search to the system, then ingest the current data in the Postgres database to facilitate a sync. Hence, fostering swift and efficient search of the database.',
+			'Developed an ordering system (with rating and review capabilities) to enable users have fair assessment on available vendors. Integrated Payment gateway and developed a simple wallet system in the app.',
+			'Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.•	Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.',
+		],
+	},
+	{
 		label: 'Work Experience',
 		duration: 'May 2023 - Present (Fulltime)',
 		title: 'Lead Backend Engineer, Ijidola Digital Agency',
 		descriptions: [
-			'Led a team of 3 developers in the design, development and maintenance of a FinPadi financial application using Node.js and Express.js, ensuring data accuracy and compliance with industry regulations.',
+			'Led a team of 3 backend engineers in the architecting, developing, and maintaining of a FinPadi financial application using Node.js and Express.js, ensuring data accuracy and compliance with industry regulations.',
 			'Collaborated with cross-functional teams to identify user needs, gather feedback, and iterate on features to enhance the overall user journey and ensure alignment with business goals.',
 			'Implemented robust authentication and authorization mechanisms using JWT, enhancing system security.',
 			'Spearheaded the design and implementation of comprehensive test strategies, resulting in a 45% reduction in bugs and improved software reliability.',
@@ -47,8 +57,8 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
-		duration: 'June 2023 - Present (Contract)',
-		title: 'Fullstack Engineer, Bolttech Solutions ',
+		duration: 'June 2023 - October 2023 (Contract)',
+		title: 'Frontend Engineer, PYYR',
 		descriptions: [
 			'Developed and maintained an efficient admin portal for a fintech solution using React and TypeScript, enabling effective management of financial data.',
 			'Collaborated closely with backend developers and UX/UI designers to ensure seamless integration and exceptional user experience.',
@@ -77,8 +87,8 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
-		duration: 'August 2021 – February 2023 (Fulltime)',
-		title: 'Full Stack Engineer, Ilerioluwa Block Industry ',
+		duration: 'August 2021 - February 2023 (Fulltime)',
+		title: 'Full Stack Engineer, Ilerioluwa Block Industry',
 		descriptions: [
 			'Developed and maintained the frontend of the building company ecommerce platform using React, ensuring seamless user experiences and responsive design.',
 			'Designed and implemented RESTful APIs using Node.js, TypeScript, and Express, enabling efficient communication between frontend and backend systems.',
@@ -93,8 +103,8 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
-		duration: 'March 2021 - August 2021',
-		title: 'Access Solutions LTD (Software Engineer Intern)',
+		duration: 'March 2021 - August 2021 (Intern)',
+		title: 'Software Engineer Intern, Access Solutions LTD',
 		descriptions: [
 			'Collaborated with senior software engineers to design, develop, and test software applications',
 			`Contributed to the development of a new feature for the company's flagship product using Java and MySQL`,
@@ -151,7 +161,7 @@ const Skills = () => {
 	const set1 =
 		' JavaScript, TypeScript, Java, C, Python, HTML, CSS, SCSS, Tailwind CSS';
 	const set2 =
-		' React JS, Next JS, Node JS, Express JS, Nest JS, MongoDB, PostgreSQL, MySQL, SQLite, REST API, GraphQL';
+		' React JS, Next JS, Node JS, Express JS, Nest JS, MongoDB, PostgreSQL, Elastic Search, MySQL, SQLite, REST API, GraphQL';
 	const set3 = ' Git, Docker, CI/CD Pipeline, Jest, Shell, AWS';
 
 	return (
