@@ -16,7 +16,7 @@ import CV from '../assets/jimoh.pdf';
 export const Home = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');
 	const [isLessThan750] = useMediaQuery('(max-width: 750px)');
-	console.log(`Someone visited at ${Date().toString()}`);
+	console.log(`Someone visits at ${Date().toString()}`);
 	return (
 		<>
 			<Flex gap={isLessThan1100 ? 5 : 16}>
