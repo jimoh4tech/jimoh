@@ -121,11 +121,11 @@ export const NavIconList = ({ isFooter }: { isFooter: boolean }) => {
 	const navIcons: NavIconProps[] = [
 		{
 			icon: FaLinkedin,
-			href: 'http://www.linkedin.com/in/abdul-quadri-jimoh-69369714a',
+			href: 'https://www.linkedin.com/in/jimoh4tech',
 		},
-		{ icon: FaTwitter, href: 'https://twitter.com/abu4code' },
+		{ icon: FaTwitter, href: 'https://twitter.com/jimoh4tech' },
 
-		{ icon: FaGithub, href: 'https://github.com/Abu-Abdillah1' },
+		{ icon: FaGithub, href: 'https://github.com/jimoh4tech' },
 
 		{ icon: FaMediumM, href: 'https://medium.com/@AQ-Jimoh' },
 

@@ -47,19 +47,6 @@ const projectList: ProjectCardProps[] = [
 		],
 	},
 	{
-		title: 'Soundmac Music Distribution',
-		description:
-			'Music distribution platforms for all class of artists across the globe.',
-		links: [{ label: 'Live', href: 'https://www.soundmac.co/' }],
-		images: [
-			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207996/test/sound1_c7fmfw.png',
-			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208007/test/sound2_lful2c.png',
-			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208042/test/sound3_euzzrj.png',
-			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208027/test/sound4_sljfto.png',
-		],
-	},
-
-	{
 		title: 'Ilerioluwa Ecommerce',
 		description:
 			'Ecommerce website for the purchase of building materials with functionalities like add to cart, checkout, and online payment integration.',
@@ -94,7 +81,7 @@ const projectList: ProjectCardProps[] = [
 		],
 	},
 	{
-		title: 'Super Exchange',
+		title: 'SuperX',
 		description:
 			'Currency exchange peer to peer api that can be easily integrated to existing platforms.',
 		links: [
@@ -104,7 +91,7 @@ const projectList: ProjectCardProps[] = [
 			},
 			{
 				label: 'Code',
-				href: 'https://github.com/Abu-Abdillah1/super-exchange',
+				href: 'https://github.com/Abu-Abdillah1/superX',
 			},
 		],
 		images: [

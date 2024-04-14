@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import Icon from '../assets/icon.svg';
 import Typewriter from 'typewriter-effect';
-import CV from '../assets/jimoh.pdf';
+import CV from '../assets/jimohB.pdf';
 
 export const Home = () => {
 	const [isLessThan1100] = useMediaQuery('(max-width: 1100px)');

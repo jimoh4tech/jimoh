@@ -22,29 +22,12 @@ interface ExperienceProps {
 
 const experinceList: ExperienceProps[] = [
 	{
-		label: 'Education',
-		duration: 'NOVEMBER 2017 - DECEMBER 2022',
-		title: 'Federal University Dutsin-Ma, December',
-		descriptions: [
-			'Bachelor of Science in Computer Science & IT - First Class Honors',
-		],
-	},
-	{
-		duration: 'October 2023 - Present (Contract)',
-		title: 'Backend Engineer, Lassod Consulting Limited',
-		descriptions: [
-			'Collaborated with diverse team of developers across the globe to contribute key features to the existing Oyoyo Event App project',
-			'Integrated Elastic Search to the system, then ingest the current data in the Postgres database to facilitate a sync. Hence, fostering swift and efficient search of the database.',
-			'Developed an ordering system (with rating and review capabilities) to enable users have fair assessment on available vendors. Integrated Payment gateway and developed a simple wallet system in the app.',
-			'Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.•	Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.',
-		],
-	},
-	{
 		label: 'Work Experience',
 		duration: 'May 2023 - Present (Fulltime)',
-		title: 'Lead Backend Engineer, Ijidola Digital Agency',
+		title:
+			'Lead Backend Engineer | FinPadi Technologies Limited | Lagos, Nigeria | Remote',
 		descriptions: [
-			'Led a team of 3 backend engineers in the architecting, developing, and maintaining of a FinPadi financial application using Node.js and Express.js, ensuring data accuracy and compliance with industry regulations.',
+			'Led a team of 7 backend engineers in the architecting, developing, and maintaining of a FinPadi financial application using Node.js and Express.js, ensuring data accuracy and compliance with industry regulations.',
 			'Collaborated with cross-functional teams to identify user needs, gather feedback, and iterate on features to enhance the overall user journey and ensure alignment with business goals.',
 			'Implemented robust authentication and authorization mechanisms using JWT, enhancing system security.',
 			'Spearheaded the design and implementation of comprehensive test strategies, resulting in a 45% reduction in bugs and improved software reliability.',
@@ -57,8 +40,19 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
+		duration: 'October 2023 - JANUARY 2024 (Contract)',
+		title:
+			'Backend Engineer | Lassod Consulting Limited | London, UK | Remote ',
+		descriptions: [
+			'Collaborated with diverse team of developers across the globe to contribute key features to the existing Oyoyo Event App project',
+			'Integrated Elastic Search to the system, then ingest the current data in the Postgres database to facilitate a sync. Hence, fostering swift and efficient search of the database.',
+			'Developed an ordering system (with rating and review capabilities) to enable users have fair assessment on available vendors. Integrated Payment gateway and developed a simple wallet system in the app.',
+			'Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.•	Migrated some part of the codebase from JavaScript to TypeScript and engaged in code optimization.',
+		],
+	},
+	{
 		duration: 'June 2023 - October 2023 (Contract)',
-		title: 'Frontend Engineer, PYYR',
+		title: 'Frontend Engineer | Pyyr | Lagos, Nigeria | Remote',
 		descriptions: [
 			'Developed and maintained an efficient admin portal for a fintech solution using React and TypeScript, enabling effective management of financial data.',
 			'Collaborated closely with backend developers and UX/UI designers to ensure seamless integration and exceptional user experience.',
@@ -73,8 +67,9 @@ const experinceList: ExperienceProps[] = [
 		],
 	},
 	{
-		duration: 'February 2023 - Present (Contract)',
-		title: 'Node JS Backend Engineer, Soundmac Global LTD',
+		duration: 'February 2023 - JULY 2023 (Contract)',
+		title:
+			'Node JS Backend Engineer | Soundmac Global Limited | Lagos, Nigeria | Remote ',
 		descriptions: [
 			'Collaborated with cross-functional teams to design, develop, and implement backend solutions for content distribution, resulting in a 45% increase in delivery efficiency.',
 			'Built RESTful APIs using Node.js, Express.js, MongoDB, and TypeScript for seamless integration between various platforms, facilitating streamlined content sharing and distribution among artists and partners.',
@@ -88,7 +83,8 @@ const experinceList: ExperienceProps[] = [
 	},
 	{
 		duration: 'August 2021 - February 2023 (Fulltime)',
-		title: 'Full Stack Engineer, Ilerioluwa Block Industry',
+		title:
+			'Full Stack Engineer | Ilerioluwa Block Industry | Lagos, Nigeria | Hybrid ',
 		descriptions: [
 			'Developed and maintained the frontend of the building company ecommerce platform using React, ensuring seamless user experiences and responsive design.',
 			'Designed and implemented RESTful APIs using Node.js, TypeScript, and Express, enabling efficient communication between frontend and backend systems.',
@@ -104,17 +100,22 @@ const experinceList: ExperienceProps[] = [
 	},
 	{
 		duration: 'March 2021 - August 2021 (Intern)',
-		title: 'Software Engineer Intern, Access Solutions LTD',
+		title:
+			'Software Engineer Intern | Access Solutions Limited | Abuja, Nigeria | Onsite ',
 		descriptions: [
 			'Collaborated with senior software engineers to design, develop, and test software applications',
 			`Contributed to the development of a new feature for the company's flagship product using Java and MySQL`,
 			'Participated in code reviews and provided feedback to improve code quality',
 			'Documented software design and implementation details',
 			'Assisted in troubleshooting and resolving software defects',
-			'Automated pipeline using GitHub workflow to automated CI/CD process',
-			'Engage with other parts of the Engineering/Development team as well as the Product function to facilitate the development & delivery of platform functionality requirements',
-			'Write clean, maintainable, and efficient code',
-			'Contribute to the conversation to bring ideas on improvement, technology development, and iteration',
+		],
+	},
+	{
+		label: 'Education',
+		duration: 'NOVEMBER 2017 - DECEMBER 2022',
+		title: 'Federal University Dutsin-Ma, December',
+		descriptions: [
+			'Bachelor of Science in Computer Science & IT - First Class Honors (4.78/5.0)',
 		],
 	},
 ];
@@ -232,28 +233,9 @@ export const About = () => {
 							</Heading>
 						</Stack>
 						<Text fontSize={isLessThan1100 ? 'sm' : 'md'} textAlign={'justify'}>
-							👋 Hi there! I'm a seasoned Fullstack Engineer with a passion for
-							innovation and a track record of success across diverse industries
-							including Music Distribution, Fintech, E-commerce, and Digital
-							Agency. With proficiency in cutting-edge technologies such as
-							TypeScript, React, Express, Node.js, databases, CI/CD, and AWS,
-							I've crafted innovative solutions that drive business growth.
-							<br />
-							<br /> 🚀 My passion for coding is matched by my collaborative
-							spirit – I thrive in team environments, fostering synergy and
-							bringing projects to life. My keen attention to detail ensures
-							that every line of code I write is robust and efficient. <br />
-							<br />
-							🌐 Whether it's architecting scalable applications or optimizing
-							user experiences, I've got a track record of turning ideas into
-							reality. My journey through diverse industries has honed my
-							adaptability and problem-solving skills, enabling me to excel in
-							dynamic, fast-paced settings. <br />
-							<br />
-							🎯 If you're seeking a proactive Fullstack Engineer who's adept at
-							juggling multiple technologies and delivering exceptional results,
-							let's connect! I'm eager to contribute my skills and drive
-							innovation in your team
+							Backend Engineer with 3+ years of working experience in designing
+							and developing scalable web applications and diverse background
+							spanning Fintech, E-commerce, Event Planning, and Digital Agency.
 						</Text>
 					</Flex>
 					{experinceList.map((ex) => (
