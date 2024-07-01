@@ -33,10 +33,23 @@ const settings = {
 
 const projectList: ProjectCardProps[] = [
 	{
+		title: 'PYYR Website',
+		description:
+			'A fintech website that shows their landing page',
+		links: [{ label: 'Live', href: 'http://www.pyyr.io/' }],
+		images: [
+			'https://res.cloudinary.com/dlnjwxp5e/image/upload/v1719846575/Screenshot_403_erz3gr.png',
+			'https://res.cloudinary.com/dlnjwxp5e/image/upload/v1719846576/Screenshot_406_k19wzk.png',
+			'https://res.cloudinary.com/dlnjwxp5e/image/upload/v1719846575/Screenshot_405_pqsdle.png',
+			'https://res.cloudinary.com/dlnjwxp5e/image/upload/v1719846575/Screenshot_403_erz3gr.png',
+			'https://res.cloudinary.com/dlnjwxp5e/image/upload/v1719846574/Screenshot_407_o6whrf.png',
+		]
+	},
+	{
 		title: 'PYYR Admin portal',
 		description:
 			'A fintech admin portal that manages all users and transations on the platform to fooster informed decision making, with the use of graphs, charts and among others.',
-		links: [{ label: 'Live', href: 'https://pyyr.vercel.app/' }],
+		links: [{ label: 'Live', href: 'https://admin.pyyr.io/' }],
 		images: [
 			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692208019/test/pyyr1_xhn0gu.png',
 			'https://res.cloudinary.com/deuzj9d9e/image/upload/v1692207957/test/pyyr2_slhixg.png',
