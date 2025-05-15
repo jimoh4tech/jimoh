@@ -33,9 +33,25 @@ const settings = {
 
 const projectList: ProjectCardProps[] = [
   {
+    title: "Appy Educators",
+    description: "An online learning platform for educators and students",
+    links: [{ label: "Live", href: "https://www.appyeducators.com" }],
+    images: [
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327942/Screenshot_1_cgobqh.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327940/Screenshot_2_bqmovn.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327941/Screenshot_4_sokf7w.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327941/Screenshot_3_ojcivb.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327941/Screenshot_6_nqkvx0.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327942/Screenshot_8_s24eag.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327942/Screenshot_7_q527lk.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327942/Screenshot_9_m6xc7o.png",
+      "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1747327942/Screenshot_10_c0sako.png",
+    ],
+  },
+  {
     title: "PYYR Brand",
     description: "A fintech voucher solutions for brands and merchants",
-    links: [{ label: "Live", href: "https://pyyr-brand.vercel.app/" }],
+    links: [{ label: "Live", href: "https://rewards.pyyr.io/" }],
     images: [
       "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1726477078/qaomznacsmhtca1uacvl.png",
       "https://res.cloudinary.com/dmwrbfxbp/image/upload/v1726477078/ouxgcgnsagg3pemlscyk.png",
@@ -220,6 +236,7 @@ const ProjectCard = ({
         maxW="sm"
         bg={useColorModeValue("#1E1E1E", "gray.50")}
         color={useColorModeValue("white", "black")}
+        minH={["300px", "350px"]}
       >
         <CardBody>
           <Flex justifyContent={"center"}>
@@ -240,6 +257,7 @@ const ProjectCard = ({
               textDecoration={"underline"}
               _hover={{ color: "#18F24F" }}
               href={l.href}
+              target="_blank"
               key={l.label}
             >
               {l.label}
